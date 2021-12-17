@@ -1,0 +1,62 @@
+﻿@model PreventWebMVC.Models.Computer
+
+@{
+    ViewData["Title"] = "Details";
+    ViewData["Title"] = PreventWebMVC.Services.ComputerService.GetPCCount();
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <div class="index">
+        <h2>Computadores</h2>
+    </div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ip)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ip)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Processor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Processor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.User)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.User)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OpSystem)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OpSystem)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Domain)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Domain)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tag)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tag)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-info">Editar</a>
+    <a asp-action="Index">Voltar</a>
+</div>

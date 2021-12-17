@@ -1,0 +1,45 @@
+﻿@model PreventWebMVC.Models.Prev
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="index">
+    <h2>Preventivas</h2>
+</div>
+
+<div>
+    
+    
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComputerId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ComputerId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Obs)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Obs)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Computer.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Computer.Name)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn mywarning">Editar</a>
+    <a asp-action="Create" asp-route-id="@Model.Id" asp-controller="Prevs" class="btn mywarning">Criar Preventiva</a>
+    <a asp-action="Index" class="btn mywarning">Voltar</a>
+</div>

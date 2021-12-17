@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+    //ignora o _Layout padrão
+    Layout = "";
+}
+
+
+
+
+
+<head>
+
+    
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - PreventWebMVC</title>
+
+        <environment include="Development">
+            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-cerulean.css" />
+            <link rel="stylesheet" href="~/css/site.css" />
+        </environment>
+        <environment exclude="Development">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+                  asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+                  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+            <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        </environment>
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        
+        <style>
+            .navbar {
+                height: 50px;
+                margin: 0 auto;
+            }
+
+       
+      
+            .login {
+                display: flex;
+                margin: 50px auto;
+                margin-top: 50px auto;
+                width: 400px;
+            }
+            .row {
+                margin-right: -15px;
+                margin-left: -15px;
+                margin-top: 150px;
+            }
+        </style>
+    </head>
+<body>
+    
+    <div id="login">
+        <div class="container itemscentral">
+            <div class=" loginbox itemscentral">
+                <div class="itemscentral">
+                    <img src="images/logo_hospital_beneficente_unimar_200x60.png">
+                </div>
+                
+
+                    <div id="login-box" >
+                       
+                        <form asp-controller="Login" asp-action="Logar" method="post">
+                            <div class="itemscentral">
+                                <div class="form-group">
+                                    <label for="username" class="text-info" style="text-align:center">Username:</label><br>
+                                    <input type="text" name="username" id="username" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="senha" id="senha" name="senha" class="text-info" style="text-align:center">Password:</label><br>
+                                    <input type="password" name="senha" id="senha" class="form-control">
+                                </div>
+                                <div class="form-group ">
+                                    <label for="remember-me" class="text-info"><span>Lembrar-me</span> <span><input id="customCheck1" name="manterlogado" type="checkbox"></span></label><br>
+                                    <input type="submit" name="submit" class="btn mylogin " value="Logar">
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+
