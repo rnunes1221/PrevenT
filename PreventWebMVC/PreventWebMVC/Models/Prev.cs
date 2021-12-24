@@ -10,13 +10,22 @@ namespace PreventWebMVC.Models
 {
     public class Prev
     {
+
         [Display(Name = "Id Preventiva")]
         public int Id { get; set; }
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
+
+        [Required(ErrorMessage = "Campo Obrigatório")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        [Display(Name = "Data")]
         public DateTime Date { get; set; }
+
+        [Required(ErrorMessage = "Campo Obrigatório")]
         [Display(Name = "Descrição")]
         public string Obs { get; set; }
         public Computer Computer { get; set; }
+
+        
         [Display(Name = "Id Computador")]
         public int ComputerId { get; set; }
         public Prev()
@@ -30,6 +39,7 @@ namespace PreventWebMVC.Models
             Date = date;
             Obs = obs;
             ComputerId = computerid;
+            
     }
     }
 }

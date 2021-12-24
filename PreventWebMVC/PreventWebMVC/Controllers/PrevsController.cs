@@ -18,7 +18,7 @@ namespace PreventWebMVC.Controllers
 {
     public class PrevsController : Controller
     {
-
+        //Criando Objetos do tipo Service
         private readonly PrevService _prevService;
         private readonly ComputerService _computerService;
         public PrevsController(ComputerService computerService, PrevService prevService)
@@ -52,12 +52,11 @@ namespace PreventWebMVC.Controllers
 
 
         //Metodo Create Post
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Prev prev)
         {
-            
+        
             _prevService.Insert(prev);
             return RedirectToAction(nameof(Index));
         }

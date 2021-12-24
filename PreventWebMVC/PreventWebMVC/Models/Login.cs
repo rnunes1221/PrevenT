@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Security.Cryptography.Xml;
+using Microsoft.AspNetCore.Localization;
 
 namespace PreventWebMVC.Models
 {
@@ -10,9 +14,16 @@ namespace PreventWebMVC.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "Nome")]
+      
         public string Name { get; set; }
+
+
+        
+       
         public string Username { get; set; }
+
+
+        
         public string Senha { get; set; }
 
         public Login()

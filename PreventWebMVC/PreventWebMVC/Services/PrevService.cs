@@ -26,9 +26,8 @@ namespace PreventWebMVC.Services
 
 
 
-        //metodo que calcula a data das preventivas e verifica se esta entre 5 e 6 meses de diferença com a data atual
-
-        public List<Prev> DateCalcAlert()
+        //metodo que calcula a data das preventivas e verifica se esta entre 5 e 6 meses de diferença com a data atual e salva em uma tabela
+        public List<Tables> DateCalcAlert()
         {
             List<Prev> teste = new List<Prev>();
             List<Prev> prevalert = new List<Prev>();
@@ -38,35 +37,45 @@ namespace PreventWebMVC.Services
             foreach (Prev prev in _context.Prev)
             {
 
+
+
+                var LastDate = from c in _context.Prev
+                                      group c by c.Date into Prev
+                                      select Prev.OrderByDescending(c => c.Date).FirstOrDefault();
+
                 var result = DateTime.Now.Subtract(prev.Date);
                 var total = result.TotalDays / 30;
                 if (total >= 5 && total <= 6)
                 {
-
-                    teste.Add(prev);
-
+                   
+                
+                    
+                    prevalert.Add(prev);
                 }
                 else if (total <= 5)
                 {
-
-                    teste.Add(prev);
-
+                    prevok.Add(prev);
                 }
                 else if (total >= 6)
                 {
-
-                    teste.Add(prev);
-
+                    prevdelay.Add(prev);
                 }
-
             }
-            return teste;
+           List<Tables> tables = new List<Tables>();
+            Tables table1 = new Tables();
+            table1.prevdelay = prevdelay;
+            table1.prevalert = prevalert;
+            table1.prevok = prevok;
+
+            tables.Add(table1);
+            
+            
+            return tables;
         }
 
 
 
         //metodo que retorna os Id's em Ordem Crescente
-
         public List<Prev> FindAll()
         {
             return _context.Prev.OrderBy(x => x.Id).ToList();
@@ -78,7 +87,7 @@ namespace PreventWebMVC.Services
         }
 
 
-
+        //metodo que Insere no banco a Preventiva
         public void Insert(Prev obj)
         {
 
@@ -93,7 +102,7 @@ namespace PreventWebMVC.Services
         }
 
 
-
+        //Metodo para Remover do banco a Preventiva
         public void Remove(int id)
         {
             try
@@ -108,6 +117,8 @@ namespace PreventWebMVC.Services
             }
 
         }
+
+        //Metodo para dar Update na Preventiva
         public void Update(Prev obj)
         {
             if (!_context.Prev.Any(x => x.Id == obj.Id))

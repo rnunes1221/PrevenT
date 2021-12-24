@@ -365,7 +365,6 @@ optgroup {
 }
 
 table {
-    border-collapse: collapse;
     border-spacing: 0;
 }
 
@@ -1922,7 +1921,10 @@ a.bg-success:focus {
 }
 
 .bg-info {
-    background-color: #66e4b1;
+    background-color: #44beb4;
+}
+.table-info {
+    border: 2px solid #08847c;
 }
 
 a.bg-info:hover,
@@ -1931,7 +1933,11 @@ a.bg-info:focus {
 }
 
 .bg-warning {
-    background-color: #e6ed68;
+    background: linear-gradient(0deg, rgba(235,153,36,0.9668242296918768) 70%, rgba(255,209,116,1) 100%);
+    color: white;
+}
+.table-warning {
+    border: 2px solid rgba(235,153,36,0.9668242296918768);
 }
 
 a.bg-warning:hover,
@@ -1940,12 +1946,18 @@ a.bg-warning:focus {
 }
 
 .bg-danger {
-    background-color: #f25e5e;
+    background: linear-gradient(0deg, #980000 70%, #e43601 100%);
+    color: white;
 }
 
 a.bg-danger:hover,
 a.bg-danger:focus {
     background-color: #f25e5e;
+}
+
+.table-danger {
+    border: 2px solid #e43601;
+    
 }
 
 .page-header {
@@ -3396,6 +3408,7 @@ output {
     line-height: 1.42857143;
     color: #555555;
 }
+
 
 .form-control {
     padding: 2px 2px;
@@ -7559,14 +7572,15 @@ button.close {
 
 .myinfo {
     box-shadow: 0px 1px 0px 0px #000000;
-    background: linear-gradient(to bottom, #a9f590 5%, #a9f590 100%);
+    background: linear-gradient(to bottom, #a9afbc 5%, #08847c 100%);
     background-color: #a9f590;
     border-radius: 6px;
     border: 1px solid #000000;
     display: inline-block;
     cursor: pointer;
-    color: #333333;
+    color: white;
     font-family: Arial;
+    font-weight: bold;
     font-size: 12px;
     text-align: center;
     padding: 5px 2px;
@@ -7574,8 +7588,8 @@ button.close {
 }
 
     .myinfo:hover {
-        background: linear-gradient(to bottom, #39e39e 5%, #39e39e 100%);
-        color: black;
+        background: linear-gradient(to bottom, #224271 5%, #08847c 100%);
+        color: white;
         background-color: #66e4b1;
     }
 
@@ -7586,25 +7600,25 @@ button.close {
 
 .mydanger {
     box-shadow: 0px 1px 0px 0px #000000;
-    background: linear-gradient(to bottom, #39e39e 5%, #33cc8f 100%);
-    background-color: #66e4b1;
+    background: linear-gradient(0deg, #980000 70%, #e43601 100%);
+    background-color: #f25e5e;
     border-radius: 6px;
     border: 1px solid #000000;
     display: inline-block;
     cursor: pointer;
-    color: #333333;
+    color: white;
     font-family: Arial;
     font-size: 12px;
-    padding: 6px 10px;
-    text-decoration: none;
-    overflow: hidden;
-    width: 65px;
+    text-align: center;
+    padding: 5px 2px;
+    width: 57px;
+    font-weight: bold;
 }
 
     .mydanger:hover {
-        background: linear-gradient(to bottom, #39e39e 5%, #39e39e 100%);
-        color: black;
-        background-color: #66e4b1;
+        background: linear-gradient(to bottom, #820000 5%, #cb3103 100%);
+        color: white;
+        background-color: #ff2a2a;
     }
 
     .mydanger:active {
@@ -7614,24 +7628,25 @@ button.close {
 
 .mywarning {
     box-shadow: 0px 1px 0px 0px #000000;
-    background: linear-gradient(to bottom, #39e39e 5%, #33cc8f 100%);
-    background-color: #66e4b1;
+    background: linear-gradient(0deg, rgba(235,153,36,0.9668242296918768) 70%, rgba(255,209,116,1) 100%);
+    background-color: #e6ed68;
     border-radius: 6px;
     border: 1px solid #000000;
     display: inline-block;
     cursor: pointer;
-    color: #333333;
+    font-weight: bold;
+    color: white;
     font-family: Arial;
     font-size: 12px;
-    padding: 6px 10px;
-    overflow: hidden;
-    width: 110px;
+    text-align: center;
+    padding: 5px 2px;
+    width: 57px;
 }
 
     .mywarning:hover {
-        background: linear-gradient(to bottom, #39e39e 5%, #39e39e 100%);
-        color: black;
-        background-color: #66e4b1;
+        background: linear-gradient(0deg, #db8100 70%, rgba(255,209,116,1) 100%);
+        color: white;
+        background-color: #ffff00;
     }
 
     .mywarning:active {
@@ -7673,8 +7688,9 @@ button.close {
 }
 
 .loginbox {
+    height:50%;
     width: 50%;
-    margin-top: 100px;
+    
     padding: 20px;
     border-style: solid;
     border-width: 0px;
@@ -7690,9 +7706,10 @@ button.close {
 
 .index {
     border-radius: 10px;
-    background-color: #66e4b1;
+    background: linear-gradient(to bottom, #a9afbc 5%, #08847c 100%);
     margin-top: 10px;
     text-align: center;
+    color: white;
 }
 
 
@@ -8071,8 +8088,8 @@ body {
 
 
 .subitemnav:hover {
-    background: linear-gradient(to bottom, #929292 5%, #929292 100%);
-    color: black;
+    background: linear-gradient(to bottom, #a9afbc 5%, #08847c 100%);
+    color: white;
     background-color: #929292;
 }
 
@@ -8179,8 +8196,19 @@ body {
 
     }
 
-   
-    
+.center-nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: auto;
+    max-width: 200px;
+    text-align: center;
+}
+
+.imgmonitor{
+    float: right;
+} 
     
 
 

@@ -38,87 +38,8 @@ body {
         display: none;
     }
 }
-.myinfo {
-    box-shadow: 0px 1px 0px 0px #000000;
-    background: linear-gradient(to bottom, #a9f590 5%, #a9f590 100%);
-    background-color: #a9f590;
-    border-radius: 6px;
-    border: 1px solid #000000;
-    display: inline-block;
-    cursor: pointer;
-    color: #333333;
-    font-family: Arial;
-    font-size: 12px;
-    text-align: center;
-    padding: 5px 2px;
-    width: 57px;
-}
 
-    .myinfo:hover {
-        background: linear-gradient(to bottom, #39e39e 5%, #39e39e 100%);
-        color: black;
-        background-color: #66e4b1;
-    }
 
-    .myinfo:active {
-        position: relative;
-        top: 1px;
-    }
-
-.mydanger {
-    box-shadow: 0px 1px 0px 0px #000000;
-    background: linear-gradient(to bottom, #39e39e 5%, #33cc8f 100%);
-    background-color: #66e4b1;
-    border-radius: 6px;
-    border: 1px solid #000000;
-    display: inline-block;
-    cursor: pointer;
-    color: #333333;
-    font-family: Arial;
-    font-size: 12px;
-    padding: 6px 10px;
-    text-decoration: none;
-    overflow: hidden;
-    width: 65px;
-}
-
-    .mydanger:hover {
-        background: linear-gradient(to bottom, #39e39e 5%, #39e39e 100%);
-        color: black;
-        background-color: #66e4b1;
-    }
-
-    .mydanger:active {
-        position: relative;
-        top: 1px;
-    }
-
-.mywarning {
-    box-shadow: 0px 1px 0px 0px #000000;
-    background: linear-gradient(to bottom, #39e39e 5%, #33cc8f 100%);
-    background-color: #66e4b1;
-    border-radius: 6px;
-    border: 1px solid #000000;
-    display: inline-block;
-    cursor: pointer;
-    color: #333333;
-    font-family: Arial;
-    font-size: 12px;
-    padding: 6px 10px;
-    overflow: hidden;
-    width: 110px;
-}
-
-    .mywarning:hover {
-        background: linear-gradient(to bottom, #39e39e 5%, #39e39e 100%);
-        color: black;
-        background-color: #66e4b1;
-    }
-
-    .mywarning:active {
-        position: relative;
-        top: 1px;
-    }
 
 .mylogin {
     box-shadow: 0px 1px 0px 0px #000000;

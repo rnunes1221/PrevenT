@@ -14,6 +14,7 @@ namespace PreventWebMVC.Models
     {
         [Required(ErrorMessage = "Id Obrigatório")]
         public int Id { get; set; }
+
         [Required]
         [Display(Name = "Nome")]
         public string Name { get; set; }
@@ -21,6 +22,7 @@ namespace PreventWebMVC.Models
         public string Ip { get; set; }
         [Display(Name = "Processador")]
         public string Processor { get; set; }
+
 
         [Display(Name = "Usuário")]
         public string User { get; set; }

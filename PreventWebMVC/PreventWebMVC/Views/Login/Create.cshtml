@@ -3,11 +3,8 @@
 @{
     ViewData["Title"] = "Create";
 }
-<div class="index">
-    <h2>Criação de Usuários</h2>
-
-    
-</div>
+<h2 style="text-align:center">Criação de Usuários</h2>
+<hr />
 <head>
     <style>
         .row {
@@ -15,9 +12,6 @@
             margin-top: 20px;
             float: right;
         }
- 
-        
-      
     </style>
 </head>
 
@@ -29,29 +23,31 @@
                 <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
                 <div class="form-group">
                     <label asp-for="Name" class="control-label"></label>
-                    <input asp-for="Name" class="form-control" />
+                    <input required asp-for="Name" class="form-control" />
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="Username" class="control-label"></label>
-                    <input asp-for="Username" class="form-control" />
+                    <input required asp-for="Username" class="form-control" />
                     <span asp-validation-for="Username" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="Senha" class="control-label"></label>
-                    <input type="password" asp-for="Senha" class="form-control" />
+                    <input required type="password" asp-for="Senha" class="form-control" />
                     <span asp-validation-for="Senha" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
                     <input type="submit" value="Create" class="btn myinfo" />
-                    <a asp-action="Index">Voltar</a>
                 </div>
-
             </form>
+
 
         </div>
 
 
     </div>
 </body>
-
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
