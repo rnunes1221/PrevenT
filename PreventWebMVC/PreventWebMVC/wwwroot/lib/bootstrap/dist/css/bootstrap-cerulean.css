@@ -223,7 +223,7 @@ span {
     width: 28%;
     right: 0;
     transition: $transition;
-    .fa
+    
 
 {
     font-size: 30px;
@@ -7688,14 +7688,12 @@ button.close {
 }
 
 .loginbox {
-    height:50%;
-    width: 50%;
-    
     padding: 20px;
     border-style: solid;
     border-width: 0px;
     border-radius: 10px;
-    box-shadow: 2px 2px 15px #888888
+    box-shadow: 2px 2px 15px #888888;
+    background: #fff;
 }
 
 .navbar {
@@ -7712,7 +7710,13 @@ button.close {
     color: white;
 }
 
+.divcentral {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
+}
 
 * {
     margin: 0;
@@ -7927,10 +7931,10 @@ body {
 }
 
 .logo {
-    float:left;
-    margin: 5px auto;
+    
     background-size: contain;
     color: transparent;
+    margin-right: 20px;
 }
 
 .logout {
@@ -8008,15 +8012,15 @@ body {
 
     .nav > .nav-links {
         
-        display: inline;
+        
         font-size: 18px;
     }
 
         .nav > .nav-links > a {
             display: inline-block;
-            padding: 13px 10px 13px 10px;
+            padding: 5px 5px 5px 5px;
             text-decoration: none;
-           
+            margin-top: 1px;
         }
 
             .nav > .nav-links > a:hover {
@@ -8028,12 +8032,13 @@ body {
     }
 
 @media (max-width:600px) {
-    .nav > .nav-btn {
+    .nav > .nav-btn  {
         display: inline-block;
         position: absolute;
         right: 0px;
         top: 0px;
     }
+ 
 
         .nav > .nav-btn > label {
             display: inline-block;
@@ -8107,7 +8112,7 @@ body {
     float: none;
     margin: 0 auto;
     display: table;
-    margin-top: 25px;
+    margin-top: 10px;
 }
 .itemscentral-nomargin {
 
@@ -8163,6 +8168,15 @@ body {
 
     @media (max-width: 600px){
 
+        .logincentral{
+            float: none;
+            margin: 0 auto;
+            display: table;
+            margin-top: 60px !important;
+        }
+
+
+
       .logo{
           display:none;
       }
@@ -8183,9 +8197,9 @@ body {
         .hvr-underline-from-right:before {
         display:none;
         }
-            .hvr-underline-from-right:hover {
-            background: #049c7c;
-            
+        .hvr-underline-from-right:hover {
+            background: linear-gradient(to bottom, #a9afbc 5%, #08847c 100%);
+            color:white;
             vertical-align: middle;
             box-shadow: 0 0 1px rgba(0, 0, 0, 0);
             position: relative;
@@ -8208,8 +8222,14 @@ body {
 
 .imgmonitor{
     float: right;
-} 
-    
+}
+
+.logincentral{
+    float: none;
+    margin: 0 auto;
+    display: table;
+    margin-top: 125px;
+}
 
 
 

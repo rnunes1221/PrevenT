@@ -13,6 +13,8 @@ using Newtonsoft.Json;
 using System.Net;
 
 
+
+
 namespace PreventWebMVC.Services
 {
     public class PrevService
@@ -34,22 +36,25 @@ namespace PreventWebMVC.Services
             List<Prev> prevok = new List<Prev>();
             List<Prev> prevdelay = new List<Prev>();
 
-            foreach (Prev prev in _context.Prev)
+            var db1= from c in _context.Prev
+                                  group c by c.ComputerId into grp
+                                  select grp.OrderByDescending(c => c.Date).FirstOrDefault();
+
+            Console.WriteLine(db1);
+            
+            foreach(var x in db1)
             {
+                Console.WriteLine(x);
+            }
 
-
-
-                var LastDate = from c in _context.Prev
-                                      group c by c.Date into Prev
-                                      select Prev.OrderByDescending(c => c.Date).FirstOrDefault();
+            foreach (Prev prev in db1)
+            {
 
                 var result = DateTime.Now.Subtract(prev.Date);
                 var total = result.TotalDays / 30;
                 if (total >= 5 && total <= 6)
                 {
-                   
-                
-                    
+
                     prevalert.Add(prev);
                 }
                 else if (total <= 5)
@@ -59,19 +64,22 @@ namespace PreventWebMVC.Services
                 else if (total >= 6)
                 {
                     prevdelay.Add(prev);
+
                 }
+
+
             }
-           List<Tables> tables = new List<Tables>();
+            List<Tables> tables = new List<Tables>();
             Tables table1 = new Tables();
             table1.prevdelay = prevdelay;
             table1.prevalert = prevalert;
             table1.prevok = prevok;
 
             tables.Add(table1);
-            
-            
             return tables;
         }
+       
+
 
 
 

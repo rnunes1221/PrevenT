@@ -2,6 +2,60 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
+      "Devart.Data/5.0.2834": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Win32.Registry": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Devart.Data.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Devart.Data.dll": {}
+        }
+      },
+      "Devart.Data.Linq/4.9.2379": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Win32.Registry": "4.5.0",
+          "System.Reflection.Emit": "4.3.0",
+          "System.Reflection.Emit.ILGeneration": "4.3.0",
+          "System.Reflection.Emit.Lightweight": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Devart.Data.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Devart.Data.Linq.dll": {}
+        }
+      },
+      "Devart.Data.MySql/8.20.2042": {
+        "type": "package",
+        "dependencies": {
+          "Devart.Data": "5.0.2834",
+          "System.Diagnostics.PerformanceCounter": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Devart.Data.MySql.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Devart.Data.MySql.dll": {}
+        }
+      },
+      "Devart.Data.MySql.Linq/4.9.2379": {
+        "type": "package",
+        "dependencies": {
+          "Devart.Data.Linq": "4.9.2379",
+          "Devart.Data.MySql": "8.20.2042"
+        },
+        "compile": {
+          "lib/netstandard2.0/Devart.Data.MySql.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Devart.Data.MySql.Linq.dll": {}
+        }
+      },
       "jQuery/3.6.0": {
         "type": "package"
       },
@@ -3371,6 +3425,19 @@
           "lib/netstandard1.0/System.Composition.TypedParts.dll": {}
         }
       },
+      "System.Configuration.ConfigurationManager/4.5.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.ProtectedData": "4.5.0",
+          "System.Security.Permissions": "4.5.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
+        }
+      },
       "System.Console/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -3463,6 +3530,27 @@
             "rid": "unix"
           },
           "runtimes/win/lib/netstandard1.3/System.Diagnostics.FileVersionInfo.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Diagnostics.PerformanceCounter/4.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0",
+          "Microsoft.Win32.Registry": "4.5.0",
+          "System.Configuration.ConfigurationManager": "4.5.0",
+          "System.Security.Principal.Windows": "4.5.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Diagnostics.PerformanceCounter.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Diagnostics.PerformanceCounter.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp2.0/System.Diagnostics.PerformanceCounter.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -3969,7 +4057,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {}
+          "ref/netstandard1.0/System.Reflection.Emit.Lightweight.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Reflection.Emit.Lightweight.dll": {}
@@ -4374,6 +4462,21 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Security.Cryptography.Primitives.dll": {}
+        }
+      },
+      "System.Security.Cryptography.ProtectedData/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
         }
       },
       "System.Security.Cryptography.X509Certificates/4.3.0": {
@@ -4783,6 +4886,64 @@
     }
   },
   "libraries": {
+    "Devart.Data/5.0.2834": {
+      "sha512": "SZbvv+JWtrkkadOdC9Wnkh2cUILqWaPg6qhVyTY8LwZeunJW0RUHt6mMrTu7BTB1i5nWv+5+/NPpgZcYED2whw==",
+      "type": "package",
+      "path": "devart.data/5.0.2834",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dc.png",
+        "devart.data.5.0.2834.nupkg.sha512",
+        "devart.data.nuspec",
+        "lib/netstandard1.3/Devart.Data.dll",
+        "lib/netstandard2.0/Devart.Data.dll"
+      ]
+    },
+    "Devart.Data.Linq/4.9.2379": {
+      "sha512": "Wvw/DzHu8/elG62oScwBn16vPE7W7D4aYFzm1W82EbC+O8Pk94Uefi22WiXF5jfi/8aJRVf5ZxzPilV711J1Tw==",
+      "type": "package",
+      "path": "devart.data.linq/4.9.2379",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "devart.data.linq.4.9.2379.nupkg.sha512",
+        "devart.data.linq.nuspec",
+        "lc.png",
+        "lib/netstandard1.3/Devart.Data.Linq.dll",
+        "lib/netstandard2.0/Devart.Data.Linq.dll"
+      ]
+    },
+    "Devart.Data.MySql/8.20.2042": {
+      "sha512": "4v3nAlEmCCLgg0OasPB023ubBCF8PWShoAzkiJyNsLXPC3/hYB+Ub2OB1DgpM5q7Le8ip9dZEBMINC+csd4uWw==",
+      "type": "package",
+      "path": "devart.data.mysql/8.20.2042",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/app.config.transform",
+        "content/web.config.transform",
+        "devart.data.mysql.8.20.2042.nupkg.sha512",
+        "devart.data.mysql.nuspec",
+        "lib/netstandard1.3/Devart.Data.MySql.dll",
+        "lib/netstandard2.0/Devart.Data.MySql.dll",
+        "mysql.png"
+      ]
+    },
+    "Devart.Data.MySql.Linq/4.9.2379": {
+      "sha512": "vEbcMQy71a6VsJeecZG5u9bHjDHyvOa7nOnhfNKozCHFnTMHtWzKbyeuuaLfO0Lmuo1lTMk8u97GQ1QE+TIi/g==",
+      "type": "package",
+      "path": "devart.data.mysql.linq/4.9.2379",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "devart.data.mysql.linq.4.9.2379.nupkg.sha512",
+        "devart.data.mysql.linq.nuspec",
+        "lc.png",
+        "lib/netstandard1.3/Devart.Data.MySql.Linq.dll",
+        "lib/netstandard2.0/Devart.Data.MySql.Linq.dll"
+      ]
+    },
     "jQuery/3.6.0": {
       "sha512": "sSzCTDWn15waSMjDrP21jjgG1j1pwISLaKiVCClwU4XGAmuZt+FScLkdyRvh9ppoIxAW/tJtJBYei+3CAwFQ7g==",
       "type": "package",
@@ -8942,6 +9103,27 @@
         "system.composition.typedparts.nuspec"
       ]
     },
+    "System.Configuration.ConfigurationManager/4.5.0": {
+      "sha512": "UIFvaFfuKhLr9u5tWMxmVoDPkFeD+Qv8gUuap4aZgVGYSYMdERck4OhLN/2gulAc0nYTEigWXSJNNWshrmxnng==",
+      "type": "package",
+      "path": "system.configuration.configurationmanager/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Configuration.ConfigurationManager.dll",
+        "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll",
+        "ref/net461/System.Configuration.ConfigurationManager.dll",
+        "ref/net461/System.Configuration.ConfigurationManager.xml",
+        "ref/netstandard2.0/System.Configuration.ConfigurationManager.dll",
+        "ref/netstandard2.0/System.Configuration.ConfigurationManager.xml",
+        "system.configuration.configurationmanager.4.5.0.nupkg.sha512",
+        "system.configuration.configurationmanager.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Console/4.3.0": {
       "sha512": "DHDrIxiqk1h03m6khKWV2X8p/uvN79rgSqpilL6uzpmSfxfU5ng8VcPtW4qsDsQDHiTv6IPV9TmD5M/vElPNLg==",
       "type": "package",
@@ -9247,6 +9429,40 @@
         "runtimes/win/lib/netstandard1.3/System.Diagnostics.FileVersionInfo.dll",
         "system.diagnostics.fileversioninfo.4.3.0.nupkg.sha512",
         "system.diagnostics.fileversioninfo.nuspec"
+      ]
+    },
+    "System.Diagnostics.PerformanceCounter/4.5.0": {
+      "sha512": "JUO5/moXgchWZBMBElgmPebZPKCgwW8kY3dFwVJavaNR2ftcc/YjXXGjOaCjly2KBXT7Ld5l/GTkMVzNv41yZA==",
+      "type": "package",
+      "path": "system.diagnostics.performancecounter/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.Diagnostics.PerformanceCounter.dll",
+        "lib/netstandard2.0/System.Diagnostics.PerformanceCounter.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.Diagnostics.PerformanceCounter.dll",
+        "ref/net461/System.Diagnostics.PerformanceCounter.xml",
+        "ref/netstandard2.0/System.Diagnostics.PerformanceCounter.dll",
+        "ref/netstandard2.0/System.Diagnostics.PerformanceCounter.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/win/lib/netcoreapp2.0/System.Diagnostics.PerformanceCounter.dll",
+        "system.diagnostics.performancecounter.4.5.0.nupkg.sha512",
+        "system.diagnostics.performancecounter.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Diagnostics.StackTrace/4.3.0": {
@@ -11929,6 +12145,47 @@
         "system.security.cryptography.primitives.nuspec"
       ]
     },
+    "System.Security.Cryptography.ProtectedData/4.5.0": {
+      "sha512": "wLBKzFnDCxP12VL9ANydSYhk59fC4cvOr9ypYQLPnAj48NQIhqnjdD2yhP8yEKyBJEjERWS9DisKL7rX5eU25Q==",
+      "type": "package",
+      "path": "system.security.cryptography.protecteddata/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Security.Cryptography.ProtectedData.dll",
+        "lib/net461/System.Security.Cryptography.ProtectedData.dll",
+        "lib/netstandard1.3/System.Security.Cryptography.ProtectedData.dll",
+        "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Security.Cryptography.ProtectedData.dll",
+        "ref/net461/System.Security.Cryptography.ProtectedData.dll",
+        "ref/net461/System.Security.Cryptography.ProtectedData.xml",
+        "ref/netstandard1.3/System.Security.Cryptography.ProtectedData.dll",
+        "ref/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "ref/netstandard2.0/System.Security.Cryptography.ProtectedData.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/win/lib/net46/System.Security.Cryptography.ProtectedData.dll",
+        "runtimes/win/lib/net461/System.Security.Cryptography.ProtectedData.dll",
+        "runtimes/win/lib/netstandard1.3/System.Security.Cryptography.ProtectedData.dll",
+        "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "system.security.cryptography.protecteddata.4.5.0.nupkg.sha512",
+        "system.security.cryptography.protecteddata.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Security.Cryptography.X509Certificates/4.3.0": {
       "sha512": "t2Tmu6Y2NtJ2um0RtcuhP7ZdNNxXEgUm2JeoA/0NvlMjAhKCnM1NX07TDl3244mVp3QU6LPEhT3HTtH1uF7IYw==",
       "type": "package",
@@ -13091,6 +13348,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "Devart.Data.MySql.Linq >= 4.9.2379",
       "Microsoft.AspNet.Mvc >= 5.2.7",
       "Microsoft.AspNetCore >= 2.1.7",
       "Microsoft.AspNetCore.App >= 2.1.1",
@@ -13156,6 +13414,10 @@
       "netcoreapp2.1": {
         "targetAlias": "netcoreapp2.1",
         "dependencies": {
+          "Devart.Data.MySql.Linq": {
+            "target": "Package",
+            "version": "[4.9.2379, )"
+          },
           "Microsoft.AspNet.Mvc": {
             "target": "Package",
             "version": "[5.2.7, )"

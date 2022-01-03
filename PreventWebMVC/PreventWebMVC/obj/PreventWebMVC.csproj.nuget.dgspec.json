@@ -45,6 +45,10 @@
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
           "dependencies": {
+            "Devart.Data.MySql.Linq": {
+              "target": "Package",
+              "version": "[4.9.2379, )"
+            },
             "Microsoft.AspNet.Mvc": {
               "target": "Package",
               "version": "[5.2.7, )"
