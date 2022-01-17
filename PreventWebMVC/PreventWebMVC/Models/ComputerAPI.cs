@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -10,11 +11,17 @@ namespace PreventWebMVC.Models
 {
     public class ComputerAPI
     {
+        [Required]
         public int Id { get; set; }
+        [Required]
         public string Name { get; set; }
+        [Required]
         public string Ipaddr { get; set; }
+        [Required]
         public string Processort { get; set; }
+        
         public string UserId { get; set; }
+        [Required]
         public string OsName { get; set; }
         public string Workgroup { get; set; }
         public string Tag { get; set; }

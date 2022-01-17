@@ -81,16 +81,34 @@ namespace PreventWebMVC
 
             app.UseHttpsRedirection();
             app.UseAuthentication();
-            
+            app.UseStaticFiles();
+            app.UseRouting();
+            app.UseCors();
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
 
-            app.UseMvc(routes =>
+            //Injeção de dependencia Net Core 3.1
+            app.UseEndpoints(endpoints => {
+               
+                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
+
+
+
+            //injeção de dependencia Net Core 2.1
+            /*app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            */
         }
     }
 }

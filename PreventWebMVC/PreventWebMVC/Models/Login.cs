@@ -12,18 +12,19 @@ namespace PreventWebMVC.Models
 {
     public class Login
     {
+        [Required]
         public int Id { get; set; }
 
-      
+        [Required]
         public string Name { get; set; }
 
 
-        
-       
+
+        [Required]
         public string Username { get; set; }
 
 
-        
+        [Required]
         public string Senha { get; set; }
 
         public Login()

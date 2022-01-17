@@ -6,30 +6,16 @@
     }
 
     <head>
-      <style>
-          
 
-
-          #myInput {
-              background-image: url('/images/search.png');
-              background-position: 10px 12px;
-              background-repeat: no-repeat;
-              width: 100%;
-              font-size: 16px;
-              padding: 12px 20px 12px 40px;
-              border: 1px solid #ddd;
-              margin-bottom: 12px;
-          }
-      </style>
     </head>
     <body>
-      <div class="itemscentral-nomargin">
+        <div class="itemscentral-nomargin">
             <div class="index">
                 <h2 style="text-align:center" class="index">
                     Quantidade de Computadores
                     <br /> @ViewData["Title"]
                 </h2>
-            
+
             </div>
             <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Pesquisar">
 
@@ -46,6 +32,9 @@
 
                         <th style="text-align:center" class="hide-td-mobile">
                             @Html.DisplayNameFor(model => model.User)
+                        </th>
+                        <th style="text-align:center" class="hide-td-mobile">
+                            @Html.DisplayNameFor(model => model.Processor)
                         </th>
                         <th style="text-align:center">
                             @Html.DisplayNameFor(model => model.OpSystem)
@@ -76,6 +65,9 @@
                             <td class="hide-td-mobile">
                                 @Html.DisplayFor(modelItem => item.User)
                             </td>
+                            <td class="hide-td-mobile">
+                                @Html.DisplayFor(modelItem => item.Processor)
+                            </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.OpSystem)
                             </td>
@@ -88,7 +80,7 @@
 
 
                             <td>
-                                <a asp-action="Edit" class="btn myinfo" asp-route-id="@item.Id">Editar</a>
+
                                 <a asp-action="Details" class="btn myinfo" asp-route-id="@item.Id">Detalhes</a>
                                 <a asp-action="Delete" class="btn myinfo" asp-route-id="@item.Id">Excluir</a>
 
@@ -98,19 +90,20 @@
                 </tbody>
 
 
-                <script>
 
-                    $(document).ready(function () {
-                        $("#myInput").on("keyup", function () {
-                            var value = $(this).val().toLowerCase();
-                            $("#myTable tr").filter(function () {
-                                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                            });
+            </table>
+            <script>
+
+                $(document).ready(function () {
+                    $("#myInput").on("keyup", function () {
+                        var value = $(this).val().toLowerCase();
+                        $("#myTable tr").filter(function () {
+                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                         });
                     });
+                });
 
-                </script>
-            </table>
+            </script>
         </div>    
 </body>
         

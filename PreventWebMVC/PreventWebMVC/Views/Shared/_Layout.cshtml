@@ -21,8 +21,10 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
-
+    
+    <!--import font Roboto-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -37,11 +39,6 @@
             </label>
         </div>
 
-
-
-
-
-
         <div class="nav-links itemscentral-nav">
             <img class="logo" src="~/images/logo_hospital_beneficente_unimar_200x60.png">
             <a class="hvr-underline-from-right menu1" asp-area="" asp-controller="Computers" asp-action="Index">Computadores</a>
@@ -54,18 +51,14 @@
 
     </div>
 
-
-
-
         <partial name="_CookieConsentPartial" />
 
         <div class="container body-content">
             @RenderBody()
 
             <footer>
-                <p>&copy; 2021 - PreventWebMVC</p>
+                <!--  <p>&copy; 2021 - PreventWebMVC</p>  -->
             </footer>
-
 
         </div>
 

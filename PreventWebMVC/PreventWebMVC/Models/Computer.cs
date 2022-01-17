@@ -18,7 +18,8 @@ namespace PreventWebMVC.Models
         [Required]
         [Display(Name = "Nome")]
         public string Name { get; set; }
-       
+
+        [Required]
         public string Ip { get; set; }
         [Display(Name = "Processador")]
         public string Processor { get; set; }
@@ -27,6 +28,7 @@ namespace PreventWebMVC.Models
         [Display(Name = "Usuário")]
         public string User { get; set; }
 
+        [Required]
         [Display(Name = "S.O")]
         public string OpSystem { get; set; }
 

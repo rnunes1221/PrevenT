@@ -18,6 +18,5 @@ namespace PreventWebMVC.Data
         public DbSet<Prev> Prev { get; set; }
         public DbSet <Login> Login { get; set; }
 
-
     }
 }

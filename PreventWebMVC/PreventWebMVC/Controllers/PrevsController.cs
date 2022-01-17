@@ -27,6 +27,7 @@ namespace PreventWebMVC.Controllers
             _computerService = computerService;
         }
 
+
         //metodo que verifica se o usuario esta logado. Se não estiver logado redireciona para a tela de login
         public IActionResult Index()
         {
@@ -35,17 +36,14 @@ namespace PreventWebMVC.Controllers
                 var list = _prevService.FindAll();
                 return View(list);
             }
-            return Redirect("/login");
-            
-
-            
+            return Redirect("/login");  
         }
+
 
         //Metodo Create in Tela
         public IActionResult Create()
         {
             var computers = _computerService.FindAll();
-
             var viewModel = new PrevFormViewModel { Computers = computers };
             return View(viewModel);
         }
@@ -56,10 +54,10 @@ namespace PreventWebMVC.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Prev prev)
         {
-        
             _prevService.Insert(prev);
             return RedirectToAction(nameof(Index));
         }
+
 
         //Metodo Delete in Tela
         public IActionResult Delete(int? id)
@@ -73,9 +71,10 @@ namespace PreventWebMVC.Controllers
             {
                 return NotFound();
             }
-
             return View(obj);
         }
+
+
         //metodo Delete POST
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -85,7 +84,6 @@ namespace PreventWebMVC.Controllers
             {
                 _prevService.Remove(id);
                 return RedirectToAction(nameof(Index));
-
             }
             catch (IntegrityException e)
             {
@@ -128,7 +126,6 @@ namespace PreventWebMVC.Controllers
         }
 
 
-
         //metodo Edit POST
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -166,19 +163,18 @@ namespace PreventWebMVC.Controllers
             return View(viewModel);
         }
 
-     
 
+        public async Task <IActionResult> SimpleSearch(DateTime? minDate, DateTime? maxDate)
+        {
+            var result = await _prevService.FindByDate(minDate, maxDate);
+            return View();
+        }
 
 
         public IActionResult Monitor()
         {
-
             var prevs = _prevService.DateCalcAlert();
-           
-
             return View(prevs);
-           
-
         }
     }
 }

@@ -36,69 +36,60 @@ namespace PreventWebMVC.Services
             List<Prev> prevok = new List<Prev>();
             List<Prev> prevdelay = new List<Prev>();
 
+
+            //consulta com LINQ para trazer a Preventiva mais recente de cada Preventiva 
             var db1= from c in _context.Prev
                                   group c by c.ComputerId into grp
                                   select grp.OrderByDescending(c => c.Date).FirstOrDefault();
-
-            Console.WriteLine(db1);
             
-            foreach(var x in db1)
-            {
-                Console.WriteLine(x);
-            }
-
+            
+          
+            //foreach para percorrer cada preventiva na query e fazer retornar para cada condição
             foreach (Prev prev in db1)
             {
-
+                //faz o calculo em meses de cada manutenção Preventiva
                 var result = DateTime.Now.Subtract(prev.Date);
                 var total = result.TotalDays / 30;
+                
+                //1 condição: se a ultima manutenção preventiva está entre 5 e 6 meses
                 if (total >= 5 && total <= 6)
                 {
-
                     prevalert.Add(prev);
                 }
+
+                //2 condição: se a ultima manutenção preventiva está entre 0 e 5 meses
                 else if (total <= 5)
                 {
                     prevok.Add(prev);
                 }
+
+                //3 condição: se a ultima manutenção preventiva passou de 6 meses
                 else if (total >= 6)
                 {
                     prevdelay.Add(prev);
-
                 }
 
 
             }
+            //Adiciona na Model Tables que possuem as três tabelas: prevdelay,prevalert e prevok
             List<Tables> tables = new List<Tables>();
             Tables table1 = new Tables();
             table1.prevdelay = prevdelay;
             table1.prevalert = prevalert;
             table1.prevok = prevok;
-
             tables.Add(table1);
             return tables;
         }
-       
-
-
-
 
         //metodo que retorna os Id's em Ordem Crescente
         public List<Prev> FindAll()
         {
-            return _context.Prev.OrderBy(x => x.Id).ToList();
+            return _context.Prev.OrderBy(x => x.Id).ToList();  
         }
-        public List<Computer> FindAllGetPC()
-        {
-            List<Computer> result = new List<Computer>();
-            return result = ComputerService.GetPC().OrderBy(x => x.Id).ToList();
-        }
-
 
         //metodo que Insere no banco a Preventiva
         public void Insert(Prev obj)
         {
-
             _context.Add(obj);
             _context.SaveChanges();
         }
@@ -108,7 +99,6 @@ namespace PreventWebMVC.Services
         {
             return _context.Prev.Include(obj => obj.Computer).FirstOrDefault(obj => obj.Id == id);
         }
-
 
         //Metodo para Remover do banco a Preventiva
         public void Remove(int id)
@@ -145,6 +135,27 @@ namespace PreventWebMVC.Services
             }
 
         }
+
+
+        //metodo que retornam as datas das preventivas em ordem descrescente por Data
+        public async Task<List<Prev>> FindByDate(DateTime? minDate, DateTime? maxDate)
+        {
+            var result = from obj in _context.Prev select obj;
+            if(minDate.HasValue)
+            {
+                result = result.Where(x => x.Date >= minDate.Value);
+            }
+            if(maxDate.HasValue)
+            {
+                result = result.Where(x => x.Date <= maxDate.Value);
+            }
+            return await result
+                .Include(x => x.Id)
+                .Include(x => x.ComputerId)
+                .OrderByDescending(X => X.Date)
+                .ToListAsync();
+        }
+
 
     }
 }

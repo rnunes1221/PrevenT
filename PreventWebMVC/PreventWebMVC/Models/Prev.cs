@@ -14,18 +14,18 @@ namespace PreventWebMVC.Models
         [Display(Name = "Id Preventiva")]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Campo Obrigatório")]
+        [Required]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         [Display(Name = "Data")]
         public DateTime Date { get; set; }
 
-        [Required(ErrorMessage = "Campo Obrigatório")]
+        [Required]
         [Display(Name = "Descrição")]
         public string Obs { get; set; }
         public Computer Computer { get; set; }
 
-        
+        [Required]
         [Display(Name = "Id Computador")]
         public int ComputerId { get; set; }
         public Prev()

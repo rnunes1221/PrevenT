@@ -73,6 +73,8 @@ namespace PreventWebMVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Logar(string username, string senha, bool manterlogado)
         {
+           
+             
             Console.WriteLine(username);
             Console.WriteLine(senha);
             Console.WriteLine(manterlogado);

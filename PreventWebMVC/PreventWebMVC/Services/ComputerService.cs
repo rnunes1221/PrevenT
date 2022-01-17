@@ -20,14 +20,6 @@ namespace PreventWebMVC.Services
             _context = context;
         }
 
-
-     
-   
-        
-       
-
-      
-
         //metodo que faz insert no banco
         public void Insert(Computer obj)
         {
@@ -64,9 +56,13 @@ namespace PreventWebMVC.Services
                         Tag = item.Tag
                     };
                     list2.Add(teste);
-                    
-                }
-            }
+
+                    //   var pc2 = _context.Computer.Where(s => s.Id == 1000).FirstOrDefault().ToString();
+                    //  Console.WriteLine(pc2);
+
+                }//fim do foreach
+
+            }//fim do if
             return list2;
         }
 
@@ -83,7 +79,7 @@ namespace PreventWebMVC.Services
             if (objresponse.ToString() != "")
             {
                 var list = JsonConvert.DeserializeObject<List<ComputerAPI>>(objresponse.ToString());
-                
+
                 foreach (ComputerAPI item in list)
                 {
                     var teste = new Computer()
@@ -98,19 +94,35 @@ namespace PreventWebMVC.Services
                         Tag = item.Tag
                     };
                     list2.Add(teste);
-                }
-            }
-            
-            return  list2.Count();
+
+                }//fim do foreach
+
+            }//fim do if
+
+            return list2.Count();
         }
 
+        //método rotina de verificação se o ID da API existe no meu banco, se não existir , da INSERT.
+        public static List<Computer> TestPC()
+        {
+
+            List<Computer> pc = new List<Computer>();
+            foreach (var x in Services.ComputerService.GetPC())
+            {
+                var pc2 = new Computer();
+                if (pc2.Id == 1000)
+                {
+                    // pc2 = _context.Computer.Where(s => s.Id == 1000).FirstOrDefault();
+                    pc.Add(pc2);
+                    Console.WriteLine(pc.ToString());
+                }
+            }
+            return pc;
+        }
 
         public List<Computer> FindAll()
         {
             return _context.Computer.OrderBy(x => x.Id).ToList();
         }
-
-
-       
     }
 }

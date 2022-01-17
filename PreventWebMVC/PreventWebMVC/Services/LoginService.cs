@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using PreventWebMVC.Models;
 using PreventWebMVC.Data;
+using BCrypt.Net;
 
 namespace PreventWebMVC.Services
 {
@@ -27,7 +28,6 @@ namespace PreventWebMVC.Services
 
         public void Insert(Login obj)
         {
-      
             _context.Add(obj);
             _context.SaveChanges();
         }
